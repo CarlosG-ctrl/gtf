@@ -1,0 +1,323 @@
+/* reset css */
+
+* {
+    min-width: 0;
+    font: inherit;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img,
+video,
+svg {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: radial-gradient(at 50% 0%, #d70000 50%, #ffc0c0);
+
+}
+
+h1,
+h2,
+h3 {
+    text-wrap: balance;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+/* styles */
+/* TODO: Cambiar la fuente
+  
+  * {
+    font-family: comic-sans;
+  } */
+
+svg{
+    fill: #000;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container-letter {
+    position: relative;
+    background-color: #ff2323;
+    z-index: -1;
+    animation: movimiento 2.5s linear infinite;
+    -webkit-box-shadow: 0px 20px 30px -10px rgb(0, 0, 0);
+    -moz-box-shadow: 0px 20px 30px -10px rgb(0, 0, 0);
+    box-shadow: 0px 20px 50px -10px rgb(0, 0, 0);
+}
+
+.cover {
+    position: absolute;
+    border-left: 200px solid transparent;
+    border-right: 200px solid transparent;
+    border-top: 100px solid #ff2323;
+    border-bottom: 100px solid transparent;
+
+    /*  */
+    transition: transform .75s;
+    transform-origin: top;
+}
+
+.paper {
+    position: absolute;
+    padding: 1.5rem;
+    line-height: 2rem;
+    right: 5px;
+    /*  */
+    filter: blur(0.8px);
+    backdrop-filter: blur(1px);
+    z-index: -1;
+    background: white;
+    width: 390px;
+    height: 180px;
+
+    transition: all .75s;
+}
+
+.letter {
+    border-left: 200px solid #ff5757;
+    border-right: 200px solid #ff5757;
+    border-top: 100px solid transparent;
+    border-bottom: 100px solid #ff9494;
+}
+
+.options {
+    display: flex;
+    gap: 5rem;
+
+
+}
+
+.options button {
+    color: #ff2323;
+    font-weight: 600;
+    border-radius: 3px;
+    background: #fff0f0;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ff2323;
+    cursor: pointer;
+}
+
+.options button:hover {
+    background: #ff5757;
+    color: #fff0f0;
+}
+#staticBackdrop{
+    display: none;
+}
+.modal-body{
+    background-color: #b10303;
+    color: #fff0f0;
+}
+#close:hover{
+    background-color: #b10303;
+}
+.open-cover {
+    transform: rotatex(180deg);
+}
+
+.open-paper {
+    animation: openPaper .5s forwards;
+}
+
+@keyframes openPaper {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: -120px;
+        height: 320px;
+    }
+}
+
+.close-paper {
+    animation: closePaper .5s forwards;
+}
+
+@keyframes closePaper {
+    0% {
+        top: -120px;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+
+.heart {
+    display: none;
+    position: absolute;
+    top: 30%;
+    left: 42%;
+    margin: auto;
+    font-size: 3rem;
+
+    color: #ff2323;
+
+    animation: crecer 2s forwards;
+}
+
+@keyframes crecer {
+    0% {
+        scale: 1;
+        opacity: 1;
+    }
+
+    100% {
+        scale: 3;
+        opacity: 0;
+
+    }
+}
+
+/* burbujas */
+
+.burbuja {
+    border-radius: 50%;
+    background: #920a0a;
+    opacity: .3;
+
+    position: absolute;
+    bottom: -150;
+
+    animation: burbujas 3s linear infinite;
+}
+
+.burbuja:nth-child(1) {
+    width: 80px;
+    height: 80px;
+    left: 5%;
+    animation-duration: 3s;
+    animation-delay: 3s;
+}
+
+.burbuja:nth-child(2) {
+    width: 100px;
+    height: 100px;
+    left: 35%;
+    animation-duration: 3s;
+    animation-delay: 5s;
+}
+
+.burbuja:nth-child(3) {
+    width: 20px;
+    height: 20px;
+    left: 15%;
+    animation-duration: 1.5s;
+    animation-delay: 7s;
+}
+
+.burbuja:nth-child(4) {
+    width: 50px;
+    height: 50px;
+    left: 90%;
+    animation-duration: 6s;
+    animation-delay: 3s;
+}
+
+.burbuja:nth-child(5) {
+    width: 70px;
+    height: 70px;
+    left: 65%;
+    animation-duration: 3s;
+    animation-delay: 1s;
+}
+
+.burbuja:nth-child(6) {
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    animation-duration: 4s;
+    animation-delay: 5s;
+}
+
+.burbuja:nth-child(7) {
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    animation-duration: 4s;
+    animation-delay: 5s;
+}
+
+.burbuja:nth-child(8) {
+    width: 100;
+    height: 100px;
+    left: 52%;
+    animation-duration: 5s;
+    animation-delay: 5s;
+}
+
+.burbuja:nth-child(9) {
+    width: 65px;
+    height: 65px;
+    left: 51%;
+    animation-duration: 3s;
+    animation-delay: 2s;
+}
+
+.burbuja:nth-child(10) {
+    width: 40px;
+    height: 40px;
+    left: 35%;
+    animation-duration: 3s;
+    animation-delay: 4s;
+}
+
+
+@keyframes burbujas {
+    0% {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    30% {
+        transform: translateX(30px);
+    }
+
+    50% {
+        opacity: .4;
+    }
+
+    100% {
+        bottom: 100vh;
+        opacity: 0;
+    }
+    
+}
+
+@keyframes movimiento {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(30px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
